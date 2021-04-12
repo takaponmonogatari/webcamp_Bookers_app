@@ -1,7 +1,14 @@
 <h1>Books</h1>
 <%= form_with model:@book, url:"/books", local:true do |f| %>
-<h2>New book</h2>
+<% @books.each do |book| %>
+<span><%= book.title %></span>
+<span><%= book.body %></span>
+<%= link_to "show", booklists_path(book.id) %>
+<%= link_to "edit", edit_booklists_path(book.id) %>
+<%= link_to "destroy", destroy_booklists_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>
 
+<h2>New book</h2>
  <h4>Title</h4>
  <%= f.text_field :title %>
 
