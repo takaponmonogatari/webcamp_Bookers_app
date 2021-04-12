@@ -6,4 +6,6 @@
  <h4>Body</h4>
  <%= f.text_area :body %>
  <%= f.submit "Uodate Book" %>
- <% end %>
+<% end %>
+ <%= link_to "show", booklists_path(@book.id) %>
+ <%= link_to "back", books_path %>
