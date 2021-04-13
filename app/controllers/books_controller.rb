@@ -3,14 +3,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      # 変数flash[:notice]に表示したいメッセージを代入する
-      flash[:notice]="Book was successfully created."
-      redirect_to @book
+      redirect_to booklists_path(@book), notice: "Book was successfully created."
     else
       @books = Book.all
       render "index"
     end
   end
+
   def index
     @book = Book.new
     @books = Book.all
