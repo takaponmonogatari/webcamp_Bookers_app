@@ -12,7 +12,7 @@
    <th>
     <%= link_to "Show", booklists_path(book.id) %>
     <%= link_to "Edit", edit_booklists_path(book.id) %>
-    <%= link_to "Destroy", destroy_booklists_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    <%= link_to "Destroy", destroy_booklists_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
    </th>
   </tr>
 <% end %>
